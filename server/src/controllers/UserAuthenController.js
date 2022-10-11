@@ -16,7 +16,7 @@ module.exports = {
             res.send(user.toJSON())
         } catch (error) {
             res.status(400).send({
-                error: 'The content information was incorrect'
+                error: 'The user information was incorrect'
             })
         }
     },
@@ -24,7 +24,7 @@ module.exports = {
     async login(req, res) {
         try {
             const { email, password } = req.body
-            // console.log(email, password)
+            console.log(email, password)
             const user = await User.findOne({
                 where: {
                     email: email
